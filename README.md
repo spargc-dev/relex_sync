@@ -135,5 +135,3 @@ locations_2025-10-21_095829.csv
 ```
 
 **Versión inicial:** Octubre 2025
-
-```
