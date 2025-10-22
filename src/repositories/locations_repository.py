@@ -23,13 +23,13 @@ class LocationsRepository(BaseRepository[SparLocations]):
                     state_name=row.state_name,
                     region=row.region,
                     location_type=row.location_type,
-                    latitude=row.latitude,
-                    longitude=row.longitude,
+                    # latitude=row.latitude,
+                    # longitude=row.longitude,
                     location_opening_date=row.location_opening_date,
                     location_closing_date=row.location_closing_date,
                     store_net_sales_area=row.store_net_sales_area,
                     store_size=row.store_size,
-                    timezone=row.timezone,
+                    # timezone=row.timezone,
                     postal_code=row.postal_code,
                 )
                 for row in results

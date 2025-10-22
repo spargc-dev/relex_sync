@@ -204,15 +204,15 @@ LOCATIONS = InterfaceConfig(
             region AS region,
             location_type AS location_type,
             -- , buying_forbidden AS buying_forbidden
-            TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(latitude)), ',', '.'), ''))  AS latitude,
-            TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(longitude)), ',', '.'), '')) AS longitude,
+            -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(latitude)), ',', '.'), ''))  AS latitude
+            -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(longitude)), ',', '.'), '')) AS longitude
             location_opening_date AS location_opening_date,
             location_closing_date AS location_closing_date,
             -- , reference_code AS reference_code
             -- , number_of_checkouts AS number_of_checkouts
             store_net_sales_area AS store_net_sales_area,
             store_size AS store_size,
-            timezone AS timezone,
+            -- , timezone AS timezone
             postal_code AS postal_code
             -- , block_start_date AS block_start_date
             -- , block_end_date AS block_end_date

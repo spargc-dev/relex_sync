@@ -141,11 +141,11 @@ class RelexLocations(BaseModel):
     state_name: str | None = None
     region: str | None = None
     location_type: str | None = None # esto es un enum
-    latitude: float | None = None
-    longitude: float | None = None
+    # latitude: float | None = None
+    # longitude: float | None = None
     location_opening_date: date | None = None
     location_closing_date: date | None = None
     store_net_sales_area: float | None = None
     store_size: float | None = None
-    timezone: str | None = None
+    # timezone: str | None = None
     postal_code: str | None = None
