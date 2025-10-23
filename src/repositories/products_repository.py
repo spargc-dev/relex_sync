@@ -21,10 +21,10 @@ class ProductsRepository(BaseRepository[SparProducts]):
                     ean=row.ean,
                     # alternative_code=row.alternative_code,
                     # order_quantity=row.order_quantity,
-                    introduction_date=row.introduction_date,
-                    termination_date=row.termination_date,
-                    # required_remaining_shelf_life=row.required_remaining_shelf_life,
-                    # reference_spoiling_time=row.reference_spoiling_time,
+                    # introduction_date=row.introduction_date,
+                    # termination_date=row.termination_date,
+                    required_remaining_shelf_life=row.required_remaining_shelf_life,
+                    reference_spoiling_time=row.reference_spoiling_time,
                     inventory_unit=row.inventory_unit,
                     height=row.height,
                     depth=row.depth,
@@ -38,10 +38,10 @@ class ProductsRepository(BaseRepository[SparProducts]):
                     # variant_type=row.variant_type,
                     brand_code=row.brand_code,
                     brand=row.brand,
-                    # is_private_label=row.is_private_label,
-                    # brand_tier=row.brand_tier,
+                    is_private_label=row.is_private_label,
+                    brand_tier=row.brand_tier,
                     # price_family=row.price_family,
-                    # line_group=row.line_group,
+                    line_group=row.line_group,
                     # is_kvi=row.is_kvi,
                     # kvi_group=row.kvi_group,
                     supplier=row.supplier,
@@ -92,6 +92,10 @@ class ProductsRepository(BaseRepository[SparProducts]):
                     # sell_pack_description=row.sell_pack_description,
                     # sell_pack_product=row.sell_pack_product,
                     # reference_code=row.reference_code
+                    custom_category=row.custom_category,
+                    custom_buyer=row.custom_buyer,
+                    custom_central=row.custom_central,
+                    custom_selfcon=row.custom_selfcon
                 )
                 for row in results
             ]

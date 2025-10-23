@@ -58,10 +58,10 @@ class RelexProducts(BaseModel):
     ean: str | None = None
     # alternative_code: str | None = None
     # order_quantity: float | None = None
-    introduction_date: date | None = None
-    termination_date: date | None = None
-    # required_remaining_shelf_life: int | None = None
-    # reference_spoiling_time: int | None = None
+    # introduction_date: date | None = None
+    # termination_date: date | None = None
+    required_remaining_shelf_life: int | None = None
+    reference_spoiling_time: int | None = None
     inventory_unit: str | None = None
     height: float | None = None
     depth: float | None = None
@@ -75,10 +75,10 @@ class RelexProducts(BaseModel):
     # variant_type: str | None = None
     brand_code: str | None = None
     brand: str | None = None
-    # is_private_label: bool | None = None
-    # brand_tier: str | None = None
+    is_private_label: bool | None = None
+    brand_tier: str | None = None
     # price_family: str | None = None
-    # line_group: str | None = None
+    line_group: str | None = None
     # is_kvi: bool | None = None
     # kvi_group: str | None = None
     supplier: str | None = None
@@ -129,6 +129,10 @@ class RelexProducts(BaseModel):
     # sell_pack_description: str | None = None
     # sell_pack_product: str | None = None
     # reference_code: str | None = None
+    custom_category: str | None = None
+    custom_buyer: str | None = None
+    custom_central: bool | None = None
+    custom_selfcon: bool | None = None
 
 class RelexLocations(BaseModel):
     location: str

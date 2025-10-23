@@ -1,4 +1,3 @@
-# src/config/interfaces.py
 from dataclasses import dataclass, field
 from typing import List, Dict, Tuple
 
@@ -106,10 +105,10 @@ PRODUCTS = InterfaceConfig(
             ean AS ean,
             -- , alternative_code AS alternative_code
             -- , order_quantity as order_quantity
-            introduction_date AS introduction_date,
-            termination_date AS termination_date,
-            -- , required_remaining_shelf_life AS required_remaining_shelf_life
-            -- , reference_spoiling_time as reference_spoiling_time
+            -- , introduction_date AS introduction_date
+            -- , termination_date AS termination_date
+            required_remaining_shelf_life AS required_remaining_shelf_life,
+            reference_spoiling_time as reference_spoiling_time,
             inventory_unit AS inventory_unit,
             height AS height,
             depth AS depth,
@@ -123,13 +122,13 @@ PRODUCTS = InterfaceConfig(
             -- , variant_type AS variant_type
             brand_code AS brand_code,
             brand AS brand,
-            -- , is_private_label AS is_private_label
-            -- , brand_tier AS brand_tier
+            is_private_label AS is_private_label,
+            brand_tier AS brand_tier,
             -- , price_family AS price_family
-            -- , line_group AS line_group
+            line_group AS line_group,
             -- , is_kvi AS is_kvi
             -- , kvi_group AS kvi_group
-            supplier as supplier
+            supplier as supplier,
             -- , manufacturer AS manufacturer
             -- , merchandising_style AS merchandising_style
             -- , case_height AS case_height
@@ -177,6 +176,10 @@ PRODUCTS = InterfaceConfig(
             -- , sell_pack_description AS sell_pack_description
             -- , sell_pack_product as sell_pack_product
             -- , reference_code AS reference_code
+            custom_category as custom_category,
+            custom_buyer as custom_buyer,
+            custom_central as custom_central,
+            custom_selfcon as custom_selfcon
         FROM [pub_md].[products];
     """,
     filename_date_fields=[],
