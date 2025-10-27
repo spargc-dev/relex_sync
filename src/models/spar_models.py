@@ -152,3 +152,32 @@ class SparLocations(BaseModel):
     store_size: float | None = None
     # timezone: str | None = None
     postal_code: str | None = None
+
+class SparProductLocations(BaseModel):
+    product: int
+    location: int
+    supplier: str
+    purchase_price: float
+    book_value: float | None = None 
+    #sales_price: float | None = None 
+    sales_tax_rate: float | None = None 
+    #order_quantity: int | None = None 
+    minimum_delivery_batch: float | None = None 
+    max_lot_size: float | None = None 
+    #ugly_shelf_point: int | None = None 
+    #shelf_pace: int | None = None 
+    introduction_date: date | None = None 
+    termination_date: date | None = None 
+    #reference_spoiling_time: date | None = None 
+    #required_remaining_shelf_life: date | None = None 
+    #production_lead_time: date | None = None 
+    box_size: int | None = None 
+    pallet_size: int | None = None 
+    # invetory_unit_in_consumer_units: date | None = None 
+    assortment_status: str | None = None 
+    #shelving_delay: date | None = None 
+    #legal_for_merchandising: date | None = None 
+    #ilegal_for_merchandising: date | None = None 
+    #reference_code: date | None = None 
+    #reference_location_code: date | None = None 
+    custom_nt: str | None = None

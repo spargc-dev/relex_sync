@@ -230,10 +230,55 @@ LOCATIONS = InterfaceConfig(
     date_order=[],
 )
 
+#===================
+#   Product locations
+#===================
+PRODUCT_LOCATIONS = InterfaceConfig(
+    interface_name="product_locations",
+    source_sql="""
+        SELECT
+            product AS product,
+            location AS location,
+            supplier AS supplier,
+            purchase_price AS purchase_price,
+            book_value AS book_value,
+            -- , sales_price AS sales_price
+            sales_tax_rate AS sales_tax_rate,
+            -- , order_quantity AS order_quantity
+            minimum_delivery_batch AS minimum_delivery_batch,
+            max_lot_size AS max_lot_size,
+            -- , ugly_shelf_point AS ugly_shelf_point
+            -- , shelf_pace AS shelf_pace
+            introduction_date AS introduction_date,
+            termination_date AS termination_date,
+            -- , reference_spoiling_time AS reference_spoiling_time
+            -- , required_remaining_shelf_life AS required_remaining_shelf_life
+            -- , production_lead_time AS production_lead_time
+            box_size AS box_size,
+            pallet_size AS pallet_size,
+            -- , invetory_unit_in_consumer_units AS invetory_unit_in_consumer_units
+            assortment_status AS assortment_status,
+            -- , shelving_delay AS shelving_delay
+            -- , legal_for_merchandising AS legal_for_merchandising
+            -- , ilegal_for_merchandising AS ilegal_for_merchandising
+            -- , reference_code AS reference_code
+            -- , reference_location_code AS reference_location_code
+            custom_nt AS custom_nt
+        FROM [pub_md].[product_locations];
+    """,
+    filename_date_fields=[],
+    unique_id_mode="timestamp",
+    required_non_null=["product", "location", "supplier", "purchase_price"],
+    #unique_combo=[],
+    #domain_checks={},
+    #date_order=[],
+)
+
 REGISTRY = {
     "product_groups": PRODUCT_GROUPS,
     "campaigns": CAMPAIGNS,
     "suppliers": SUPPLIERS,
     "products": PRODUCTS,
     "locations": LOCATIONS,
+    "product_locations": PRODUCT_LOCATIONS,
 }
