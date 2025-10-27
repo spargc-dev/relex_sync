@@ -78,7 +78,7 @@ SUPPLIERS = InterfaceConfig(
             name AS name, 
             safety_lead_time AS safety_lead_time, 
             supplier_type AS supplier_type,
-            purchase_block AS purchase_block,
+            -- , purchase_block AS purchase_block
             incoterms AS incoterms,
             currency AS currency
         FROM [pub_md].[suppliers];
@@ -207,6 +207,8 @@ LOCATIONS = InterfaceConfig(
             region AS region,
             location_type AS location_type,
             -- , buying_forbidden AS buying_forbidden
+            latitude AS latitude,
+            longitude AS longitude,
             -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(latitude)), ',', '.'), ''))  AS latitude
             -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(longitude)), ',', '.'), '')) AS longitude
             location_opening_date AS location_opening_date,

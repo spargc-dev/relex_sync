@@ -44,7 +44,7 @@ class SparSuppliers(BaseModel):
     name: str
     safety_lead_time: int | None = None 
     supplier_type: str | None = None # esto es enum
-    purchase_block: bool | None = None 
+    #purchase_block: bool | None = None 
     incoterms: str | None = None
     currency: str | None = None
 
@@ -144,8 +144,8 @@ class SparLocations(BaseModel):
     state_name: str | None = None
     region: str | None = None
     location_type: str | None = None # esto es un enum
-    # latitude: float | None = None
-    # longitude: float | None = None
+    latitude: float | None = None
+    longitude: float | None = None
     location_opening_date: date | None = None
     location_closing_date: date | None = None
     store_net_sales_area: float | None = None
@@ -156,7 +156,7 @@ class SparLocations(BaseModel):
 class SparProductLocations(BaseModel):
     product: int
     location: int
-    supplier: str
+    supplier: int
     purchase_price: float
     book_value: float | None = None 
     #sales_price: float | None = None 

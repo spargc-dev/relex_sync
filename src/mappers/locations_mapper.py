@@ -16,8 +16,8 @@ class LocationsMapper(BaseMapper[SparLocations, RelexLocations]):
             state_name=ExportConfig.clean_string(source.state_name),
             region=ExportConfig.clean_string(source.region),
             location_type=ExportConfig.clean_string(source.location_type), # esto es un enum
-            # latitude=source.latitude,
-            # longitude=source.longitude,
+            latitude=source.latitude,
+            longitude=source.longitude,
             location_opening_date=source.location_opening_date,
             location_closing_date=source.location_closing_date,
             store_net_sales_area=source.store_net_sales_area,

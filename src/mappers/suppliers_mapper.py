@@ -10,7 +10,7 @@ class SuppliersMapper(BaseMapper[SparSuppliers, RelexSuppliers]):
             name=ExportConfig.clean_string(source.name),
             safety_lead_time=source.safety_lead_time,
             supplier_type=source.supplier_type,
-            purchase_block=source.purchase_block,
+            #purchase_block=source.purchase_block,
             incoterms=ExportConfig.clean_string(source.incoterms),
             currency=ExportConfig.clean_string(source.currency)
         )
