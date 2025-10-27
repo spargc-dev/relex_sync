@@ -207,8 +207,8 @@ LOCATIONS = InterfaceConfig(
             region AS region,
             location_type AS location_type,
             -- , buying_forbidden AS buying_forbidden
-            latitude AS latitude,
-            longitude AS longitude,
+            -- , latitude AS latitude
+            -- , longitude AS longitude
             -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(latitude)), ',', '.'), ''))  AS latitude
             -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(longitude)), ',', '.'), '')) AS longitude
             location_opening_date AS location_opening_date,
