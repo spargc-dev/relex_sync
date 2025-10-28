@@ -246,7 +246,7 @@ PRODUCT_LOCATIONS = InterfaceConfig(
         SELECT
             product AS product,
             location AS location,
-            supplier AS supplier,
+            CASE WHEN supplier = 9051 THEN 9050 ELSE supplier END AS supplier,
             purchase_price AS purchase_price,
             book_value AS book_value,
             sales_price AS sales_price,
