@@ -23,14 +23,28 @@ class LocationsRepository(BaseRepository[SparLocations]):
                     state_name=row.state_name,
                     region=row.region,
                     location_type=row.location_type,
+                    #buying_forbidden=row.buying_forbidden,
                     #latitude=row.latitude,
                     #longitude=row.longitude,
                     location_opening_date=row.location_opening_date,
                     location_closing_date=row.location_closing_date,
-                    store_net_sales_area=row.store_net_sales_area,
+                    reference_code=(
+                        int(row.reference_code)
+                        if str(row.reference_code).strip() not in ("", "None", "NULL", None)
+                        else None
+                    ),
+                    #store_net_sales_area=row.store_net_sales_area,
                     store_size=row.store_size,
+                    #custom_store_size_category=row.custom_store_size_category,
                     # timezone=row.timezone,
                     postal_code=row.postal_code,
+                    #timezone=row.timezone,
+                    #custom_distibutor_id=row.postacustom_distibutor_idl_code,
+                    #custom_distibutor_name=row.custom_distibutor_name,
+                    #custom_store_zone=row.custom_store_zone,
+                    #custom_store_partner=row.custom_store_partner,
+                    #block_start_date=row.block_start_date,
+                    #block_end_date=row.block_end_date,
                 )
                 for row in results
             ]

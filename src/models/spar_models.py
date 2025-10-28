@@ -134,7 +134,7 @@ class SparProducts(BaseModel):
     custom_selfcon: bool | None = None
 
 class SparLocations(BaseModel):
-    location: str
+    location: int
     name: str
     currency: str | None = None
     chain: str | None = None
@@ -144,14 +144,24 @@ class SparLocations(BaseModel):
     state_name: str | None = None
     region: str | None = None
     location_type: str | None = None # esto es un enum
+    #buying_forbidden: str | None = None
     #latitude: float | None = None
     #longitude: float | None = None
     location_opening_date: date | None = None
     location_closing_date: date | None = None
-    store_net_sales_area: float | None = None
+    reference_code: int | None = None
+    #store_net_sales_area: float | None = None
     store_size: float | None = None
+    #custom_store_size_category: str | None = None
     # timezone: str | None = None
-    postal_code: str | None = None
+    postal_code: int | None = None
+    #timezone: str | None = None
+    #custom_distibutor_id: str | None = None
+    #custom_distibutor_name: str | None = None
+    #custom_store_zone: str | None = None
+    #custom_store_partner: str | None = None
+    #block_start_date: str | None = None
+    #block_end_date: str | None = None
 
 class SparProductLocations(BaseModel):
     product: int
@@ -159,28 +169,32 @@ class SparProductLocations(BaseModel):
     supplier: int
     purchase_price: float
     book_value: float | None = None 
-    #sales_price: float | None = None 
-    sales_tax_rate: float | None = None 
-    #order_quantity: int | None = None 
+    sales_price: float | None = None 
+    #sales_tax_rate: float | None = None 
+    order_quantity: int | None = None 
     minimum_delivery_batch: float | None = None 
-    max_lot_size: float | None = None 
+    #max_lot_size: float | None = None 
     #ugly_shelf_point: int | None = None 
     #shelf_pace: int | None = None 
-    introduction_date: date | None = None 
-    termination_date: date | None = None 
-    #reference_spoiling_time: date | None = None 
+    #introduction_date: date | None = None 
+    #termination_date: date | None = None 
+    #season_start: date | None = None 
+    #season_end: date | None = None 
+    reference_spoiling_time: date | None = None 
     #required_remaining_shelf_life: date | None = None 
     #production_lead_time: date | None = None 
     box_size: int | None = None 
     pallet_size: int | None = None 
-    # invetory_unit_in_consumer_units: date | None = None 
+    #pallet_layer_size: int | None = None 
+    #invetory_unit_in_consumer_units: date | None = None 
     assortment_status: str | None = None 
     #shelving_delay: date | None = None 
     #legal_for_merchandising: date | None = None 
     #ilegal_for_merchandising: date | None = None 
     #reference_code: date | None = None 
     #reference_location_code: date | None = None 
-    custom_nt: str | None = None
+    custom_NT: str | None = None
+    # custom_prevision_abierta: str | None = None
 
 class SparSalesPrices(BaseModel):
     product: int

@@ -6,7 +6,7 @@ from src.utils.export_config import ExportConfig
 class LocationsMapper(BaseMapper[SparLocations, RelexLocations]):
     def map(self, source: SparLocations) -> RelexLocations:
         return RelexLocations(
-            location=ExportConfig.clean_string(source.location),
+            location=source.location,
             name=ExportConfig.clean_string(source.name),
             currency=ExportConfig.clean_string(source.currency),
             chain=ExportConfig.clean_string(source.chain),
@@ -16,12 +16,22 @@ class LocationsMapper(BaseMapper[SparLocations, RelexLocations]):
             state_name=ExportConfig.clean_string(source.state_name),
             region=ExportConfig.clean_string(source.region),
             location_type=ExportConfig.clean_string(source.location_type), # esto es un enum
+            #buying_forbidden=source.buying_forbidden
             #latitude=source.latitude,
             #longitude=source.longitude,
             location_opening_date=source.location_opening_date,
             location_closing_date=source.location_closing_date,
-            store_net_sales_area=source.store_net_sales_area,
+            reference_code=source.reference_code,
+            #store_net_sales_area=source.store_net_sales_area,
             store_size=source.store_size,
-            # timezone=ExportConfig.clean_string(source.timezone), 
-            postal_code=ExportConfig.clean_string(source.postal_code)
+            #custom_store_size_category=source.location_closincustom_store_size_categoryg_date,
+            #timezone=ExportConfig.clean_string(source.timezone), 
+            postal_code=source.postal_code,
+            #timezone=source.timezone,
+            #custom_distibutor_id=source.custom_distibutor_id,
+            #custom_distibutor_name=source.custom_distibutor_name,
+            #custom_store_zone=source.custom_store_zone,
+            #custom_store_partner=source.custom_store_partner,
+            #block_start_date=source.block_start_date,
+            #block_end_date=source.block_end_date,
         )

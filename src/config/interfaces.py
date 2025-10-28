@@ -213,12 +213,17 @@ LOCATIONS = InterfaceConfig(
             -- , TRY_CONVERT(float, NULLIF(REPLACE(LTRIM(RTRIM(longitude)), ',', '.'), '')) AS longitude
             location_opening_date AS location_opening_date,
             location_closing_date AS location_closing_date,
-            -- , reference_code AS reference_code
+            reference_code AS reference_code,
             -- , number_of_checkouts AS number_of_checkouts
-            store_net_sales_area AS store_net_sales_area,
+            -- , store_net_sales_area AS store_net_sales_area
             store_size AS store_size,
+            -- , custom_store_size_category AS custom_store_size_category
             -- , timezone AS timezone
             postal_code AS postal_code
+            -- , custom_distibutor_id AS custom_distibutor_id
+            -- , custom_distibutor_name AS custom_distibutor_name
+            -- , custom_store_zone AS custom_store_zone
+            -- , custom_store_partner AS custom_store_partner 
             -- , block_start_date AS block_start_date
             -- , block_end_date AS block_end_date
         FROM [pub_md].[locations]
@@ -244,29 +249,33 @@ PRODUCT_LOCATIONS = InterfaceConfig(
             supplier AS supplier,
             purchase_price AS purchase_price,
             book_value AS book_value,
-            -- , sales_price AS sales_price
-            sales_tax_rate AS sales_tax_rate,
-            -- , order_quantity AS order_quantity
+            sales_price AS sales_price,
+            -- , sales_tax_rate AS sales_tax_rate
+            order_quantity AS order_quantity,
             minimum_delivery_batch AS minimum_delivery_batch,
-            max_lot_size AS max_lot_size,
+            -- , max_lot_size AS max_lot_size
             -- , ugly_shelf_point AS ugly_shelf_point
             -- , shelf_pace AS shelf_pace
-            introduction_date AS introduction_date,
-            termination_date AS termination_date,
-            -- , reference_spoiling_time AS reference_spoiling_time
+            -- , introduction_date AS introduction_date
+            -- , termination_date AS termination_date
+            -- , season_start AS season_start
+            -- , season_end AS season_end
+            reference_spoiling_time AS reference_spoiling_time,
             -- , required_remaining_shelf_life AS required_remaining_shelf_life
             -- , production_lead_time AS production_lead_time
             box_size AS box_size,
             pallet_size AS pallet_size,
-            -- , invetory_unit_in_consumer_units AS invetory_unit_in_consumer_units
+            -- , pallet_layer_size AS pallet_layer_size
+            -- , inventory_unit_in_consumer_units AS inventory_unit_in_consumer_units
             assortment_status AS assortment_status,
             -- , shelving_delay AS shelving_delay
             -- , legal_for_merchandising AS legal_for_merchandising
             -- , ilegal_for_merchandising AS ilegal_for_merchandising
             -- , reference_code AS reference_code
             -- , reference_location_code AS reference_location_code
-            custom_nt AS custom_nt
-        FROM [pub_md].[product_locations];
+            custom_NT AS custom_NT
+            -- , custom_prevision_abierta AS custom_prevision_abierta ESTO QUÉ ES, EN SQL SMS LO QUE VEO ES valor
+        FROM [dbo].[pub.md.product_locations];
     """,
     filename_date_fields=[],
     unique_id_mode="timestamp",
@@ -277,7 +286,7 @@ PRODUCT_LOCATIONS = InterfaceConfig(
 )
 
 #=================================
-#     Locations  
+#     Sales prices  
 #=================================
 SALES_PRICES = InterfaceConfig(
     interface_name="sales_prices",
