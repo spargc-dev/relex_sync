@@ -276,6 +276,32 @@ PRODUCT_LOCATIONS = InterfaceConfig(
     #date_order=[],
 )
 
+#=================================
+#     Locations  
+#=================================
+SALES_PRICES = InterfaceConfig(
+    interface_name="sales_prices",
+    source_sql="""
+        SELECT
+            product AS product,
+            location AS location,
+            start_date AS start_date,
+            end_date AS end_date,
+            sales_price AS sales_price,
+            sales_price_with_vat AS sales_price_with_vat,
+            price_type AS price_type,
+            Igic AS Igic
+        FROM [pub_md].[sales_prices]
+    """,
+    filename_date_fields=[],
+    unique_id_mode="timestamp",
+    required_non_null=["product", "location", "start_date"],
+    #domain_checks={
+    #    "state": ["", "DELETE"]
+    #},
+    date_order=[],
+)
+
 REGISTRY = {
     "product_groups": PRODUCT_GROUPS,
     "campaigns": CAMPAIGNS,
@@ -283,4 +309,5 @@ REGISTRY = {
     "products": PRODUCTS,
     "locations": LOCATIONS,
     "product_locations": PRODUCT_LOCATIONS,
+    "sales_prices": SALES_PRICES,
 }

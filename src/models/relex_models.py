@@ -182,3 +182,14 @@ class RelexProductLocations(BaseModel):
     #reference_code: date | None = None 
     #reference_location_code: date | None = None 
     custom_nt: str | None = None
+
+class RelexSalesPrices(BaseModel):
+    product: int
+    location: int
+    start_date:date 
+    end_date: date | None = None
+    sales_price: str | None = None
+    sales_price_with_vat: float | None = None
+    price_type: str | None = None
+    Igic: float | None = None
+    
