@@ -15,7 +15,7 @@ class SuppliersRepository(BaseRepository[SparSuppliers]):
                 SparSuppliers(
                     supplier=row.supplier,
                     name=row.name,
-                    safety_lead_time=row.safety_lead_time,
+                    #safety_lead_time=row.safety_lead_time,
                     supplier_type=row.supplier_type,
                     #purchase_block=row.purchase_block,
                     incoterms=row.incoterms,

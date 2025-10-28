@@ -45,6 +45,7 @@ class LocationsRepository(BaseRepository[SparLocations]):
                     #custom_store_partner=row.custom_store_partner,
                     #block_start_date=row.block_start_date,
                     #block_end_date=row.block_end_date,
+                    custom_tarifa=row.custom_tarifa
                 )
                 for row in results
             ]

@@ -76,7 +76,7 @@ SUPPLIERS = InterfaceConfig(
         SELECT
             supplier AS supplier, 
             name AS name, 
-            safety_lead_time AS safety_lead_time, 
+            -- , safety_lead_time AS safety_lead_time
             supplier_type AS supplier_type,
             -- , purchase_block AS purchase_block
             incoterms AS incoterms,
@@ -219,13 +219,14 @@ LOCATIONS = InterfaceConfig(
             store_size AS store_size,
             -- , custom_store_size_category AS custom_store_size_category
             -- , timezone AS timezone
-            postal_code AS postal_code
+            postal_code AS postal_code,
             -- , custom_distibutor_id AS custom_distibutor_id
             -- , custom_distibutor_name AS custom_distibutor_name
             -- , custom_store_zone AS custom_store_zone
             -- , custom_store_partner AS custom_store_partner 
             -- , block_start_date AS block_start_date
-            -- , block_end_date AS block_end_date
+            -- , block_end_date AS block_end_date,
+            custom_tarifa AS custom_tarifa
         FROM [pub_md].[locations]
     """,
     filename_date_fields=[],

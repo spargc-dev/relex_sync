@@ -34,4 +34,5 @@ class LocationsMapper(BaseMapper[SparLocations, RelexLocations]):
             #custom_store_partner=source.custom_store_partner,
             #block_start_date=source.block_start_date,
             #block_end_date=source.block_end_date,
+            custom_tarifa=source.custom_tarifa
         )

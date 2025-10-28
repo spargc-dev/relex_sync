@@ -42,7 +42,7 @@ class SparCampaigns(BaseModel):
 class SparSuppliers(BaseModel):
     supplier: int
     name: str
-    safety_lead_time: int | None = None 
+    #safety_lead_time: int | None = None 
     supplier_type: str | None = None # esto es enum
     #purchase_block: bool | None = None 
     incoterms: str | None = None
@@ -162,6 +162,7 @@ class SparLocations(BaseModel):
     #custom_store_partner: str | None = None
     #block_start_date: str | None = None
     #block_end_date: str | None = None
+    custom_tarifa: str | None = None
 
 class SparProductLocations(BaseModel):
     product: int
