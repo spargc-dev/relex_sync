@@ -78,8 +78,8 @@ class SparProducts(BaseModel):
     brand_tier: str | None = None
     # price_family: str | None = None
     line_group: str | None = None
-    # is_kvi: bool | None = None
-    # kvi_group: str | None = None
+    is_kvi: bool | None = None
+    kvi_group: str | None = None
     supplier: str | None = None
     # manufacturer: str | None = None
     # merchandising_style: str | None = None

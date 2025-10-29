@@ -126,8 +126,8 @@ PRODUCTS = InterfaceConfig(
             brand_tier AS brand_tier,
             -- , price_family AS price_family
             line_group AS line_group,
-            -- , is_kvi AS is_kvi
-            -- , kvi_group AS kvi_group
+            is_kvi AS is_kvi,
+            kvi_group AS kvi_group,
             supplier as supplier,
             -- , manufacturer AS manufacturer
             -- , merchandising_style AS merchandising_style
