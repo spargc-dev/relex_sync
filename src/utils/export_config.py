@@ -1,5 +1,5 @@
 from typing import Set
-from datetime import datetime
+from datetime import date, datetime
 
 class ExportConfig:
     OUTPUT_DIR: str = "output"
@@ -54,3 +54,14 @@ class ExportConfig:
             return str(int(float(value)))
         except (ValueError, TypeError):
             return str(value).strip()
+
+    @classmethod
+    def _parse_date(cls, value):
+        if value in (None, "", " ", "NULL"):
+            return None
+        if isinstance(value, date):
+            return value
+        try:
+            return datetime.strptime(str(value).strip(), "%Y-%m-%d").date()
+        except Exception:
+            return None
