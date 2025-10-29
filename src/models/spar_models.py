@@ -154,7 +154,7 @@ class SparLocations(BaseModel):
     store_size: float | None = None
     #custom_store_size_category: str | None = None
     # timezone: str | None = None
-    postal_code: int | None = None
+    postal_code: str | None = None
     #timezone: str | None = None
     #custom_distibutor_id: str | None = None
     #custom_distibutor_name: str | None = None

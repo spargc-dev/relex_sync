@@ -2,6 +2,7 @@ from typing import List
 from src.models.spar_models import SparLocations 
 from src.repositories.base_repository import BaseRepository
 from src.utils.db_connection import DatabaseConnection
+from src.utils.export_config import ExportConfig
 
 class LocationsRepository(BaseRepository[SparLocations]):
     def __init__(self, sql: str):
@@ -37,7 +38,7 @@ class LocationsRepository(BaseRepository[SparLocations]):
                     store_size=row.store_size,
                     #custom_store_size_category=row.custom_store_size_category,
                     # timezone=row.timezone,
-                    postal_code=row.postal_code,
+                    postal_code=ExportConfig.clean_postal_code(row.postal_code),
                     #timezone=row.timezone,
                     #custom_distibutor_id=row.postacustom_distibutor_idl_code,
                     #custom_distibutor_name=row.custom_distibutor_name,

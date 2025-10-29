@@ -45,3 +45,12 @@ class ExportConfig:
         if not isinstance(date, datetime):
             return date
         return date.strftime(cls.DATE_FORMAT)
+
+    @classmethod
+    def clean_postal_code(cls, value) -> str | None:
+        if value in (None, "", "NULL"):
+            return None
+        try:
+            return str(int(float(value)))
+        except (ValueError, TypeError):
+            return str(value).strip()

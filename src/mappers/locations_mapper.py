@@ -26,7 +26,7 @@ class LocationsMapper(BaseMapper[SparLocations, RelexLocations]):
             store_size=source.store_size,
             #custom_store_size_category=source.location_closincustom_store_size_categoryg_date,
             #timezone=ExportConfig.clean_string(source.timezone), 
-            postal_code=source.postal_code,
+            postal_code=ExportConfig.clean_postal_code(source.postal_code),
             #timezone=source.timezone,
             #custom_distibutor_id=source.custom_distibutor_id,
             #custom_distibutor_name=source.custom_distibutor_name,
