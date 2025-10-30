@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from datetime import date
+from datetime import date, datetime, time
 
 class RelexProductGroups(BaseModel):
     code1: str
@@ -207,4 +207,15 @@ class RelexSalesPrices(BaseModel):
     sales_price_with_vat: float | None = None
     price_type: str | None = None
     Igic: float | None = None
-    
+
+class RelexSales(BaseModel):
+    receipt_timestamp: datetime
+    receipt_code: int
+    date: date
+    time: time
+    location: int 
+    product: int
+    Quantity: float
+    receipt_row_number: float | None = None
+    sales_value_with_tax: float | None = None
+    pos_transactions: float | None = None

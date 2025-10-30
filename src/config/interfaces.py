@@ -312,6 +312,34 @@ SALES_PRICES = InterfaceConfig(
     date_order=[],
 )
 
+#=================================
+#     Sales   
+#=================================
+SALES = InterfaceConfig(
+    interface_name="sales",
+    source_sql="""
+        SELECT
+            receipt_timestamp AS receipt_timestamp,
+            receipt_code AS receipt_code,
+            date AS date,
+            time AS time,
+            location AS location,
+            product AS product,
+            Quantity AS Quantity,
+            receipt_row_number AS receipt_row_number,
+            sales_value_with_tax AS sales_value_with_tax,
+            pos_transactions AS pos_transactions
+        FROM [pub_tx].[sales]
+    """,
+    filename_date_fields=[],
+    unique_id_mode="timestamp",
+    required_non_null=[],
+    #domain_checks={
+    #    "state": ["", "DELETE"]
+    #},
+    date_order=[],
+)
+
 REGISTRY = {
     "product_groups": PRODUCT_GROUPS,
     "campaigns": CAMPAIGNS,
@@ -320,4 +348,5 @@ REGISTRY = {
     "locations": LOCATIONS,
     "product_locations": PRODUCT_LOCATIONS,
     "sales_prices": SALES_PRICES,
+    "sales": SALES,
 }
