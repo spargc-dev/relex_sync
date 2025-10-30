@@ -247,16 +247,16 @@ PRODUCT_LOCATIONS = InterfaceConfig(
         SELECT
             product AS product,
             location AS location,
-            CASE WHEN supplier = 9051 THEN 9050 ELSE supplier END AS supplier,
+            -- , CASE WHEN supplier = 9051 THEN 9050 ELSE supplier END AS supplier
+            supplier AS supplier,
             purchase_price AS purchase_price,
             book_value AS book_value,
             sales_price AS sales_price,
-            -- , sales_tax_rate AS sales_tax_rate
+            sales_tax_rate AS sales_tax_rate,
             order_quantity AS order_quantity,
             minimum_delivery_batch AS minimum_delivery_batch,
             -- , max_lot_size AS max_lot_size
             -- , ugly_shelf_point AS ugly_shelf_point
-            -- , shelf_pace AS shelf_pace
             -- , introduction_date AS introduction_date
             -- , termination_date AS termination_date
             -- , season_start AS season_start
@@ -274,16 +274,15 @@ PRODUCT_LOCATIONS = InterfaceConfig(
             -- , ilegal_for_merchandising AS ilegal_for_merchandising
             -- , reference_code AS reference_code
             -- , reference_location_code AS reference_location_code
-            custom_NT AS custom_NT
-            -- , custom_prevision_abierta AS custom_prevision_abierta ESTO QUÉ ES, EN SQL SMS LO QUE VEO ES valor
+            custom_nt AS custom_nt,
+            custom_prevision_abierta AS custom_prevision_abierta
         FROM [dbo].[pub.md.product_locations];
     """,
     filename_date_fields=[],
     unique_id_mode="timestamp",
     required_non_null=["product", "location", "supplier", "purchase_price"],
     #unique_combo=[],
-    #domain_checks={},
-    #date_order=[],
+    #domain_checks={},    #date_order=[],
 )
 
 #=================================
@@ -325,10 +324,10 @@ SALES = InterfaceConfig(
             time AS time,
             location AS location,
             product AS product,
-            Quantity AS Quantity,
+            quantity AS quantity,
             receipt_row_number AS receipt_row_number,
             sales_value_with_tax AS sales_value_with_tax,
-            pos_transactions AS pos_transactions
+            sales_tax_rate AS sales_tax_rate
         FROM [pub_tx].[sales]
     """,
     filename_date_fields=[],

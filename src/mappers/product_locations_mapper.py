@@ -12,7 +12,7 @@ class ProductLocationsMapper(BaseMapper[SparProductLocations, RelexProductLocati
             purchase_price=source.purchase_price,
             book_value=source.book_value,
             sales_price=source.sales_price,
-            #sales_tax_rate=source.sales_tax_rate,
+            sales_tax_rate=source.sales_tax_rate,
             order_quantity=source.order_quantity,
             minimum_delivery_batch=source.minimum_delivery_batch,
             #max_lot_size=source.max_lot_size,
@@ -35,7 +35,7 @@ class ProductLocationsMapper(BaseMapper[SparProductLocations, RelexProductLocati
             #ilegal_for_merchandising=source.ilegal_for_merchandising,
             #reference_code=source.reference_code,
             #reference_location_code=source.reference_location_code,
-            custom_NT=source.custom_NT,
-            #custom_prevision_abierta=source.custom_prevision_abierta
+            custom_nt=source.custom_nt,
+            custom_prevision_abierta=source.custom_prevision_abierta
 
         )

@@ -171,7 +171,7 @@ class SparProductLocations(BaseModel):
     purchase_price: float
     book_value: float | None = None 
     sales_price: float | None = None 
-    #sales_tax_rate: float | None = None 
+    sales_tax_rate: float | None = None 
     order_quantity: int | None = None 
     minimum_delivery_batch: float | None = None 
     #max_lot_size: float | None = None 
@@ -194,8 +194,8 @@ class SparProductLocations(BaseModel):
     #ilegal_for_merchandising: date | None = None 
     #reference_code: date | None = None 
     #reference_location_code: date | None = None 
-    custom_NT: str | None = None
-    # custom_prevision_abierta: str | None = None
+    custom_nt: bool | None = None
+    custom_prevision_abierta: bool | None = None
 
 class SparSalesPrices(BaseModel):
     product: int
@@ -208,13 +208,13 @@ class SparSalesPrices(BaseModel):
     Igic: float | None = None
 
 class SparSales(BaseModel):
-    receipt_timestamp: datetime
-    receipt_code: int
+    receipt_timestamp: str
+    receipt_code: str
     date: date
     time: time
-    location: int 
-    product: int
-    Quantity: float
-    receipt_row_number: float | None = None
+    location: str 
+    product: str
+    quantity: float
+    receipt_row_number: int | None = None
     sales_value_with_tax: float | None = None
-    pos_transactions: float | None = None
+    sales_tax_rate: float | None = None

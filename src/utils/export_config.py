@@ -1,5 +1,6 @@
 from typing import Set
-from datetime import date, datetime
+from datetime import date, datetime, timezone, timedelta
+from typing import Optional
 
 class ExportConfig:
     OUTPUT_DIR: str = "output"
@@ -65,3 +66,26 @@ class ExportConfig:
             return datetime.strptime(str(value).strip(), "%Y-%m-%d").date()
         except Exception:
             return None
+    
+    @classmethod
+    def normalize_timestamp(cls, ts) -> Optional[str]:
+        """Devuelve timestamp ISO-8601 (2025-10-29T15:18:16+02:00) o None."""
+        if ts is None:
+            return None
+
+        tz = timezone(timedelta(hours=2))
+
+        if isinstance(ts, datetime):
+            return ts.replace(tzinfo=tz).isoformat(timespec="seconds")
+
+        if isinstance(ts, str):
+            s = ts.strip()
+            # Si viene como '2025-10-29 15:18:16' ⇒ convertir a '2025-10-29T15:18:16+02:00'
+            if "T" not in s and " " in s:
+                s = s.replace(" ", "T")
+            if "+" not in s and "Z" not in s:
+                s += "+02:00"
+            return s
+
+        return str(ts)
+
