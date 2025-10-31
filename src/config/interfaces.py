@@ -326,8 +326,13 @@ SALES = InterfaceConfig(
             product AS product,
             quantity AS quantity,
             receipt_row_number AS receipt_row_number,
+            value AS value,
             sales_value_with_tax AS sales_value_with_tax,
-            sales_tax_rate AS sales_tax_rate
+            tax_amount AS tax_amount,
+            sales_tax_rate AS sales_tax_rate,
+            -- , campaign_code AS campaign_code
+            -- , transaction_campaign_code AS transaction_campaign_code
+            custom_supplier_cost AS custom_supplier_cost
         FROM [pub_tx].[sales]
     """,
     filename_date_fields=[],

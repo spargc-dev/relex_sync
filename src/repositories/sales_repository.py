@@ -25,8 +25,13 @@ class SalesRepository(BaseRepository[SparSales]):
                         product=str(row.product) if row.product is not None else None,
                         quantity=row.quantity,
                         receipt_row_number=row.receipt_row_number,
+                        value=row.value,
                         sales_value_with_tax=row.sales_value_with_tax,
+                        tax_amount=row.tax_amount,
                         sales_tax_rate=row.sales_tax_rate,
+                        #campaign_code=row.campaign_code,
+                        #transaction_campaign_code=row.transaction_campaign_code,
+                        custom_supplier_cost=row.custom_supplier_cost
                     )
                 )
             return mapped_results

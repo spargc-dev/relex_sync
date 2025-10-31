@@ -28,6 +28,11 @@ class SalesMapper(BaseMapper[SparSales, RelexSales]):
             product=source.product,
             quantity=source.quantity,
             receipt_row_number=source.receipt_row_number,
+            value=source.value,
             sales_value_with_tax=source.sales_value_with_tax,
+            tax_amount=source.tax_amount,
             sales_tax_rate=source.sales_tax_rate,
+            #campaign_code=source.campaign_code,
+            #transaction_campaign_code=source.transaction_campaign_code,
+            custom_supplier_cost=source.custom_supplier_cost
         )
