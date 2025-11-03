@@ -32,6 +32,7 @@ class SalesMapper(BaseMapper[SparSales, RelexSales]):
             sales_value_with_tax=source.sales_value_with_tax,
             tax_amount=source.tax_amount,
             sales_tax_rate=source.sales_tax_rate,
+            purchase_price=source.purchase_price,
             #campaign_code=source.campaign_code,
             #transaction_campaign_code=source.transaction_campaign_code,
             custom_supplier_cost=source.custom_supplier_cost

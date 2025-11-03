@@ -255,15 +255,15 @@ PRODUCT_LOCATIONS = InterfaceConfig(
             sales_tax_rate AS sales_tax_rate,
             order_quantity AS order_quantity,
             minimum_delivery_batch AS minimum_delivery_batch,
-            -- , max_lot_size AS max_lot_size
+            max_lot_size AS max_lot_size,
             -- , ugly_shelf_point AS ugly_shelf_point
             -- , introduction_date AS introduction_date
             -- , termination_date AS termination_date
             -- , season_start AS season_start
             -- , season_end AS season_end
             reference_spoiling_time AS reference_spoiling_time,
-            -- , required_remaining_shelf_life AS required_remaining_shelf_life
-            -- , production_lead_time AS production_lead_time
+            required_remaining_shelf_life AS required_remaining_shelf_life,
+            production_lead_time AS production_lead_time,
             box_size AS box_size,
             pallet_size AS pallet_size,
             -- , pallet_layer_size AS pallet_layer_size
@@ -326,10 +326,11 @@ SALES = InterfaceConfig(
             product AS product,
             quantity AS quantity,
             receipt_row_number AS receipt_row_number,
-            value AS value,
+            value AS value, 
             sales_value_with_tax AS sales_value_with_tax,
             tax_amount AS tax_amount,
             sales_tax_rate AS sales_tax_rate,
+            purchase_price AS purchase_price, 
             -- , campaign_code AS campaign_code
             -- , transaction_campaign_code AS transaction_campaign_code
             custom_supplier_cost AS custom_supplier_cost

@@ -173,18 +173,18 @@ class RelexProductLocations(BaseModel):
     book_value: float | None = None 
     sales_price: float | None = None 
     sales_tax_rate: float | None = None 
-    order_quantity: int | None = None 
+    order_quantity: float | None = None 
     minimum_delivery_batch: float | None = None 
-    #max_lot_size: float | None = None 
+    max_lot_size: float | None = None 
     #ugly_shelf_point: int | None = None 
     #shelf_pace: int | None = None 
     #introduction_date: date | None = None 
     #termination_date: date | None = None 
     #season_start: date | None = None 
     #season_end: date | None = None 
-    reference_spoiling_time: date | None = None 
-    #required_remaining_shelf_life: date | None = None 
-    #production_lead_time: date | None = None 
+    reference_spoiling_time: int | None = None 
+    required_remaining_shelf_life: int | None = None 
+    production_lead_time: int | None = None 
     box_size: int | None = None 
     pallet_size: int | None = None 
     #pallet_layer_size: int | None = None 
@@ -197,7 +197,7 @@ class RelexProductLocations(BaseModel):
     #reference_location_code: date | None = None 
     custom_nt: bool | None = None
     custom_prevision_abierta: bool | None = None
-
+    
 class RelexSalesPrices(BaseModel):
     product: int
     location: int
@@ -221,6 +221,7 @@ class RelexSales(BaseModel):
     sales_value_with_tax: float | None = None
     tax_amount: float | None = None
     sales_tax_rate: float | None = None
+    purchase_price: float | None = None
     #campaign_code: str | None = None
     #transaction_campaign_code: str | None = None
     custom_supplier_cost: float | None = None
