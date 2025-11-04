@@ -168,7 +168,7 @@ class SparProductLocations(BaseModel):
     product: int
     location: int
     supplier: int
-    purchase_price: float
+    purchase_price: float | None = None
     book_value: float | None = None 
     sales_price: float | None = None 
     sales_tax_rate: float | None = None 
@@ -224,3 +224,12 @@ class SparSales(BaseModel):
     #campaign_code: str | None = None
     #transaction_campaign_code: str | None = None
     custom_supplier_cost: float | None = None
+
+class SparPromotionsCompetitorPrices(BaseModel):
+    observed_at: datetime
+    product: int
+    competitor: str
+    location: int | None = None
+    location_attribute_name: str | None = None
+    type: str | None = None
+    sales_price: float | None = None

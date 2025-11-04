@@ -280,7 +280,7 @@ PRODUCT_LOCATIONS = InterfaceConfig(
     """,
     filename_date_fields=[],
     unique_id_mode="timestamp",
-    required_non_null=["product", "location", "supplier", "purchase_price"],
+    required_non_null=[],
     #unique_combo=[],
     #domain_checks={},    #date_order=[],
 )
@@ -345,6 +345,31 @@ SALES = InterfaceConfig(
     date_order=[],
 )
 
+#=================================
+#   Promotions Competitor Prices   
+#=================================
+PROMOTIONS_COMPETITOR_PRICES = InterfaceConfig(
+    interface_name="promotions_competitor_prices",
+    source_sql="""
+        SELECT
+            observed_at AS observed_at,
+            product AS product,
+            competitor AS competitor,
+            location AS location,
+            location_attribute_name AS location_attribute_name,
+            type AS type,
+            sales_price AS sales_price
+        FROM [pub_md].[promotions_competitor_prices]
+    """,
+    filename_date_fields=[],
+    unique_id_mode="timestamp",
+    required_non_null=[],
+    #domain_checks={
+    #    "state": ["", "DELETE"]
+    #},
+    date_order=[],
+)
+
 REGISTRY = {
     "product_groups": PRODUCT_GROUPS,
     "campaigns": CAMPAIGNS,
@@ -354,4 +379,5 @@ REGISTRY = {
     "product_locations": PRODUCT_LOCATIONS,
     "sales_prices": SALES_PRICES,
     "sales": SALES,
+    "promotions_competitor_prices": PROMOTIONS_COMPETITOR_PRICES,
 }
