@@ -1,4 +1,3 @@
-# src/mappers/campaigns_mapper.py
 from src.models.spar_models import SparCampaigns
 from src.models.relex_models import RelexCampaigns
 from src.mappers.base_mapper import BaseMapper

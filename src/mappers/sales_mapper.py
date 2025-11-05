@@ -11,7 +11,7 @@ class SalesMapper(BaseMapper[SparSales, RelexSales]):
 
         ts = source.receipt_timestamp
 
-        # ⚙️ Paso 1: proteger tipos raros (de PyODBC, pandas, etc.)
+        # Paso 1: proteger tipos raros (de PyODBC, pandas, etc.)
         # Si no es datetime puro de Python, convertir a texto y normalizar
         if isinstance(ts, datetime):
             receipt_ts_iso = ts.replace(tzinfo=tz).isoformat(timespec="seconds")

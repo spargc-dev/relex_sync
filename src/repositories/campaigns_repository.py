@@ -1,4 +1,3 @@
-# src/repositories/campaigns_repository.py
 from typing import List
 from src.models.spar_models import SparCampaigns
 from src.repositories.base_repository import BaseRepository
