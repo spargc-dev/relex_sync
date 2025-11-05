@@ -26,6 +26,7 @@ relex_sync/
 │
 ├── .env                     # Variables de entorno (credenciales, BD, ABS)
 ├── .env.example             # Ejemplo de configuración
+├── requirements.txt         # Dependencias de Python
 ├── README.md
 └── venv/                    # Entorno virtual de Python
 
@@ -62,7 +63,7 @@ cd relex_sync
 
 ```powershell
 pip install -U pip wheel setuptools
-pip install pandas pydantic pyodbc python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 4. Instalar el driver SQL
