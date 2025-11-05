@@ -317,16 +317,16 @@ SALES_PRICES = InterfaceConfig(
 SALES = InterfaceConfig(
     interface_name="sales",
     source_sql="""
-        SELECT
+        SELECT 
             receipt_timestamp AS receipt_timestamp,
             receipt_code AS receipt_code,
             date AS date,
             time AS time,
             location AS location,
             product AS product,
-            quantity AS quantity,
+            Quantity AS quantity,
             receipt_row_number AS receipt_row_number,
-            value AS value, 
+            value AS value,
             sales_value_with_tax AS sales_value_with_tax,
             tax_amount AS tax_amount,
             sales_tax_rate AS sales_tax_rate,
@@ -334,6 +334,7 @@ SALES = InterfaceConfig(
             -- , campaign_code AS campaign_code
             -- , transaction_campaign_code AS transaction_campaign_code
             custom_supplier_cost AS custom_supplier_cost
+            -- , loyalty_customer_type AS loyalty_customer_type
         FROM [pub_tx].[sales]
     """,
     filename_date_fields=[],

@@ -217,7 +217,7 @@ class RelexSales(BaseModel):
     product: str
     quantity: float
     receipt_row_number: int | None = None
-    value: int | None = None
+    value: float | None = None
     sales_value_with_tax: float | None = None
     tax_amount: float | None = None
     sales_tax_rate: float | None = None
@@ -225,6 +225,7 @@ class RelexSales(BaseModel):
     #campaign_code: str | None = None
     #transaction_campaign_code: str | None = None
     custom_supplier_cost: float | None = None
+    #loyalty_customer_type: str | None = None
 
 class RelexPromotionsCompetitorPrices(BaseModel):
     observed_at: datetime

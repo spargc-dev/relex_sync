@@ -32,7 +32,8 @@ class SalesRepository(BaseRepository[SparSales]):
                         purchase_price=row.purchase_price,
                         #campaign_code=row.campaign_code,
                         #transaction_campaign_code=row.transaction_campaign_code,
-                        custom_supplier_cost=row.custom_supplier_cost
+                        custom_supplier_cost=row.custom_supplier_cost,
+                        #loyalty_customer_type=row.loyalty_customer_type
                     )
                 )
             return mapped_results

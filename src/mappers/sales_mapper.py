@@ -36,4 +36,5 @@ class SalesMapper(BaseMapper[SparSales, RelexSales]):
             #campaign_code=source.campaign_code,
             #transaction_campaign_code=source.transaction_campaign_code,
             custom_supplier_cost=source.custom_supplier_cost
+            #loyalty_customer_type=source.loyalty_customer_type
         )
