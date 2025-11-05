@@ -330,10 +330,10 @@ SALES = InterfaceConfig(
             sales_value_with_tax AS sales_value_with_tax,
             tax_amount AS tax_amount,
             sales_tax_rate AS sales_tax_rate,
-            purchase_price AS purchase_price, 
+            purchase_price AS purchase_price
             -- , campaign_code AS campaign_code
             -- , transaction_campaign_code AS transaction_campaign_code
-            custom_supplier_cost AS custom_supplier_cost
+            -- , custom_supplier_cost AS custom_supplier_cost
             -- , loyalty_customer_type AS loyalty_customer_type
         FROM [pub_tx].[sales]
     """,

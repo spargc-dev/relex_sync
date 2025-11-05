@@ -223,7 +223,7 @@ class SparSales(BaseModel):
     purchase_price: float | None = None
     #campaign_code: str | None = None
     #transaction_campaign_code: str | None = None
-    custom_supplier_cost: float | None = None
+    #custom_supplier_cost: float | None = None
     #loyalty_customer_type: str | None = None
 
 class SparPromotionsCompetitorPrices(BaseModel):
