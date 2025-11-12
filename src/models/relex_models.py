@@ -212,7 +212,7 @@ class RelexSales(BaseModel):
     receipt_timestamp: str
     receipt_code: str
     date: date
-    time: time
+    time: str
     location: str 
     product: str
     quantity: float

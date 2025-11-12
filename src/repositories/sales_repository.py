@@ -20,7 +20,7 @@ class SalesRepository(BaseRepository[SparSales]):
                         receipt_timestamp=ExportConfig.normalize_timestamp(row.receipt_timestamp),
                         receipt_code=str(row.receipt_code) if row.receipt_code is not None else None,
                         date=row.date,
-                        time=row.time,
+                        time=ExportConfig.normalize_time(row.time),
                         location=str(row.location) if row.location is not None else None,
                         product=str(row.product) if row.product is not None else None,
                         quantity=row.quantity,

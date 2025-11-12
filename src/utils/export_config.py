@@ -88,4 +88,35 @@ class ExportConfig:
             return s
 
         return str(ts)
+    
+    @classmethod
+    def normalize_time(cls, value) -> Optional[str]:
+        """
+        Normaliza un valor de hora a formato HH:mm.
+        Funciona para valores string ('19:52:00.0000000', '19:52:00') y datetime.time.
+        Devuelve SIEMPRE un string 'HH:MM' o None.
+        """
+        if value in (None, "", "NULL", " "):
+            return None
 
+        # Si es datetime.time → convertir a HH:MM
+        from datetime import time as dtime
+        if isinstance(value, dtime):
+            return f"{value.hour:02d}:{value.minute:02d}"
+
+        # Si es texto → limpiar segundos y microsegundos
+        if isinstance(value, str):
+            s = value.strip()
+            if '.' in s:  # quitar microsegundos
+                s = s.split('.')[0]
+            parts = s.split(':')
+            if len(parts) >= 2:
+                # Forzar siempre HH:MM (sin segundos)
+                return f"{int(parts[0]):02d}:{int(parts[1]):02d}"
+            return s[:5]
+
+        # Fallback genérico
+        try:
+            return str(value)[:5]
+        except Exception:
+            return None
